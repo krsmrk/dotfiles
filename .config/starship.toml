@@ -3,6 +3,7 @@ add_newline = true
 
 # Sets user-defined palette
 palette = "catppuccin_macchiato"
+
 right_format = """$git_state $git_status"""
 
 format = """
@@ -29,7 +30,6 @@ not_executable_symbol = "󰂭 "
 sigint_symbol = "󰹆 "
 signal_symbol = "󱐋 " 
 not_found_symbol = " "
-# format = "[$symbol \\($signal_name$common_meaning$maybe_int\\) ]($style)"
 format = "[$symbol ]($style)"
 style = "fg:subtext0)"
 map_symbol = true
@@ -52,8 +52,6 @@ vimcmd_symbol = "[ ](fg:base bg:blue)"
 format = "[ $symbol ](bg:blue)"
 disabled = false
 
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
 [username]
 show_always = true
 format = '[ $user ]($style)'
@@ -73,18 +71,11 @@ format = "[ $path ]($style)[$read_only]($read_only_style)"
 truncation_length = 3
 truncation_symbol = ".../"
 
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
 "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-# Keep in mind that the order matters. For example:
-# "Important Documents" = " 󰈙 "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important 󰈙 " = " 󰈙 "
 
 [git_branch]
 symbol = ""
