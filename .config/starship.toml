@@ -1,0 +1,139 @@
+continuation_prompt = "[󰅬  ](subtext0)"
+add_newline = true
+
+# Sets user-defined palette
+palette = "catppuccin_macchiato"
+right_format = """$git_state $git_status"""
+
+format = """
+ $status\
+$cmd_duration
+[](maroon)\
+$shell\
+[ ](bg:peach fg:maroon)\
+$os\
+$username\
+[ ](fg:peach bg:yellow)\
+$directory\
+[ ](fg:yellow bg:green)\
+$git_branch\
+[ ](fg:green bg:blue)\
+$character\
+[ ](fg:blue)\
+"""
+
+[status]
+symbol = " "
+success_symbol = "󰄬 "
+not_executable_symbol = "󰂭 "
+sigint_symbol = "󰹆 "
+signal_symbol = "󱐋 " 
+not_found_symbol = " "
+# format = "[$symbol \\($signal_name$common_meaning$maybe_int\\) ]($style)"
+format = "[$symbol ]($style)"
+style = "fg:subtext0)"
+map_symbol = true
+disabled = false
+
+[cmd_duration]
+min_time = 0
+format = "[$duration󱦟 ](fg:subtext0)"
+disabled = false
+
+[shell]
+style = "fg:base bg:maroon"
+format = "[ $indicator ]($style)"
+disabled = false
+
+[character]
+success_symbol = "[󰥭 ](fg:base bg:blue)"
+error_symbol = "[󰥭 ](fg:base bg:blue)"
+vimcmd_symbol = "[ ](fg:base bg:blue)"
+format = "[ $symbol ](bg:blue)"
+disabled = false
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+format = '[ $user ]($style)'
+style_user = "fg:base bg:peach"
+style_root = "fg:base bg:peach"
+disabled = false
+
+[os]
+style = "fg:base bg:peach"
+disabled = true
+
+[directory]
+style = "fg:base bg:yellow"
+read_only_style = "fg:base bg:yellow"
+read_only = "  "
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+truncation_length = 3
+truncation_symbol = ".../"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+[git_branch]
+symbol = ""
+style = "fg:base bg:green"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:subtext0"
+up_to_date = "[ ](fg:green)"
+untracked = "[ \\($count\\) ](fg:maroon)"
+stashed = "[ \\($count\\) ](fg:flamingo)"
+modified = "[ \\($count\\) ](fg:yellow)"
+staged = "[ \\($count\\) ](green)"
+renamed = "[ \\($count\\) ](fg:rosewater)"
+deleted = "[ \\($count\\) ](fg:red)"
+conflicted = "[󰕚 \\($count\\) ](fg:red)"
+ahead = "[󰁝 \\($count\\) ](fg:teal)"
+behind = "[󰁅 \\($count\\) ](fg:peach)"
+diverged = "[󰁜 \\([ $ahead_count](fg:teal)[ $behind_count](fg:peach)\\)](fg:maroon)"
+
+[git_state]
+format="[$state\\($progress_current of $progress_total\\)](fg:subtext0)"
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
