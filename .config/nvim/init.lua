@@ -19,12 +19,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Load all plugin configuraitons from lua files in plugin folder
+-- Load all plugin configurations from lua files in plugin folder
 require("lazy").setup("plugins")
 
 -- Theme
-require('plugin-config.catppuccin')
-vim.cmd [[colorscheme catppuccin]]
+require("nightfox").setup()
+vim.cmd [[colorscheme nordfox]]
 
 -- Start lualine
 require("lualine").setup()
@@ -64,4 +64,8 @@ mason_lspconfig.setup_handlers {
 		}
 	end
 }
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
 

@@ -1,26 +1,23 @@
-continuation_prompt = "[󰅬  ](subtext0)"
+continuation_prompt = "[󰅬  ](subtle_text)"
 add_newline = true
 
 # Sets user-defined palette
-palette = "catppuccin_macchiato"
+palette = "powerline_colors"
 
 right_format = """$git_state $git_status"""
 
 format = """
  $status\
 $cmd_duration
-[](maroon)\
-$shell\
-[ ](bg:peach fg:maroon)\
 $os\
 $username\
-[ ](fg:peach bg:yellow)\
+[ ](fg:first bg:second)\
 $directory\
-[ ](fg:yellow bg:green)\
+[ ](fg:second bg:third)\
 $git_branch\
-[ ](fg:green bg:blue)\
+[ ](fg:third bg:fourth)\
 $character\
-[ ](fg:blue)\
+[ ](fg:fourth)\
 """
 
 [status]
@@ -31,41 +28,41 @@ sigint_symbol = "󰹆 "
 signal_symbol = "󱐋 " 
 not_found_symbol = " "
 format = "[$symbol ]($style)"
-style = "fg:subtext0)"
+style = "fg:subtle_text)"
 map_symbol = true
 disabled = false
 
 [cmd_duration]
 min_time = 0
-format = "[$duration󱦟 ](fg:subtext0)"
+format = "[$duration󱦟 ](fg:subtle_text)"
 disabled = false
 
 [shell]
-style = "fg:base bg:maroon"
+style = "fg:dark_text bg:first"
 format = "[ $indicator ]($style)"
-disabled = false
+disabled = true
 
 [character]
-success_symbol = "[󰥭 ](fg:base bg:blue)"
-error_symbol = "[󰥭 ](fg:base bg:blue)"
-vimcmd_symbol = "[ ](fg:base bg:blue)"
-format = "[ $symbol ](bg:blue)"
+success_symbol = "[󰥭 ](fg:light_text bg:fourth)"
+error_symbol = "[󰥭 ](fg:light_text bg:fourth)"
+vimcmd_symbol = "[ ](fg:light_text bg:fourth)"
+format = "[ $symbol ](bg:fourth)"
 disabled = false
 
 [username]
 show_always = true
 format = '[ $user ]($style)'
-style_user = "fg:base bg:peach"
-style_root = "fg:base bg:peach"
+style_user = "fg:dark_text bg:first"
+style_root = "fg:dark_text bg:first"
 disabled = false
 
 [os]
-style = "fg:base bg:peach"
+style = "fg:dark_text bg:first"
 disabled = true
 
 [directory]
-style = "fg:base bg:yellow"
-read_only_style = "fg:base bg:yellow"
+style = "fg:dark_text bg:second"
+read_only_style = "fg:dark_text bg:second"
 read_only = "  "
 format = "[ $path ]($style)[$read_only]($read_only_style)"
 truncation_length = 3
@@ -79,52 +76,43 @@ truncation_symbol = ".../"
 
 [git_branch]
 symbol = ""
-style = "fg:base bg:green"
+style = "fg:light_text bg:third"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
 format = "[$all_status$ahead_behind]($style)"
-style = "fg:subtext0"
-up_to_date = "[ ](fg:green)"
-untracked = "[ \\($count\\) ](fg:maroon)"
-stashed = "[ \\($count\\) ](fg:flamingo)"
-modified = "[ \\($count\\) ](fg:yellow)"
-staged = "[ \\($count\\) ](green)"
-renamed = "[ \\($count\\) ](fg:rosewater)"
-deleted = "[ \\($count\\) ](fg:red)"
-conflicted = "[󰕚 \\($count\\) ](fg:red)"
-ahead = "[󰁝 \\($count\\) ](fg:teal)"
-behind = "[󰁅 \\($count\\) ](fg:peach)"
-diverged = "[󰁜 \\([ $ahead_count](fg:teal)[ $behind_count](fg:peach)\\)](fg:maroon)"
+style = "fg:subtle_text"
+up_to_date = "[ ](fg:success_text)"
+untracked = "[ \\($count\\) ](fg:warning_text)"
+modified = "[ \\($count\\) ](fg:primary)"
+staged = "[ \\($count\\) ](fg:success_text)"
+renamed = "[ \\($count\\) ](fg:uncommon_text)"
+deleted = "[ \\($count\\) ](fg:error_text)"
+conflicted = "[󰕚 \\($count\\) ](fg:danger_text)"
+stashed = "[ \\($count\\) ](fg:secondary)"
+ahead = "[󰁝 \\($count\\) ](fg:ahead)"
+behind = "[󰁅 \\($count\\) ](fg:behind)"
+diverged = "[󰁜 \\([$ahead_count](fg:ahead)/[$behind_count](fg:behind)\\)](fg:subtle_text)"
 
 [git_state]
-format="[$state\\($progress_current of $progress_total\\)](fg:subtext0)"
+format="[$state\\($progress_current of $progress_total\\)](fg:subtle_text)"
 
-[palettes.catppuccin_macchiato]
-rosewater = "#f4dbd6"
-flamingo = "#f0c6c6"
-pink = "#f5bde6"
-mauve = "#c6a0f6"
-red = "#ed8796"
-maroon = "#ee99a0"
-peach = "#f5a97f"
-yellow = "#eed49f"
-green = "#a6da95"
-teal = "#8bd5ca"
-sky = "#91d7e3"
-sapphire = "#7dc4e4"
-blue = "#8aadf4"
-lavender = "#b7bdf8"
-text = "#cad3f5"
-subtext1 = "#b8c0e0"
-subtext0 = "#a5adcb"
-overlay2 = "#939ab7"
-overlay1 = "#8087a2"
-overlay0 = "#6e738d"
-surface2 = "#5b6078"
-surface1 = "#494d64"
-surface0 = "#363a4f"
-base = "#24273a"
-mantle = "#1e2030"
-crust = "#181926"
+[palettes.powerline_colors]
+first = "#eceff4"
+second = "#d8dee9"
+third = "#4c566a"
+fourth = "#434c5e"
+background = "#2e3440"
+light_text = "#eceff4"
+dark_text = "#2e3440"
+subtle_text = "#e5e9f0"
+success_text = "#a3be8c"
+warning_text = "#ebcb8b"
+danger_text = "#d08770"
+error_text = "#bf616a"
+primary = "#88c0d0"
+secondary = "#81a1c1"
+uncommon_text = "#b48ead"
+ahead = "#8fbcbb"
+behind = "#b48ead"
 
