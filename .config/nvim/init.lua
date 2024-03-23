@@ -20,9 +20,42 @@ vim.opt.softtabstop = -1
 -- Apply shiftwidth at start of line and softtabstop elsewhere for tab key.
 vim.opt.smarttab = true
 
+-- Continue indentation after line break
+vim.opt.breakindent = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- Show whitespaceh in editor
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 99
+
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<ESC>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-[>', '<cmd>nohlsearch<CR>')
+
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Preview substitutions live while typing
+vim.opt.inccommand = 'split'
+
+vim.g.have_nerd_font = true
+
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = 'a'
+
+-- The current mode is already in the status line
+vim.opt.showmode = false
 
 -- Bootstrap lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
