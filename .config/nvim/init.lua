@@ -20,9 +20,42 @@ vim.opt.softtabstop = -1
 -- Apply shiftwidth at start of line and softtabstop elsewhere for tab key.
 vim.opt.smarttab = true
 
+-- Continue indentation after line break
+vim.opt.breakindent = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- Show whitespaceh in editor
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 99
+
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<ESC>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-[>', '<cmd>nohlsearch<CR>')
+
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Preview substitutions live while typing
+vim.opt.inccommand = 'split'
+
+vim.g.have_nerd_font = true
+
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = 'a'
+
+-- The current mode is already in the status line
+vim.opt.showmode = false
 
 -- Bootstrap lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -51,6 +84,7 @@ require("lualine").setup()
 -- Use native-fzf in Telescope
 require('telescope').load_extension('fzf')
 require('user.keybindings')
+require('plugin-config/format-on-save')
 
 local servers = {
 	-- gopls = {},
@@ -92,40 +126,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	callback = function()
 		vim.lsp.buf.format()
 	end,
-})
-
-local format_on_save = require("format-on-save")
-local formatters = require("format-on-save.formatters")
-
-format_on_save.setup({
-	exclude_path_patterns = {
-		"/node_modules/",
-		".local/share/nvim/lazy",
-	},
-	formatter_by_ft = {
-		css = formatters.lsp,
-		html = formatters.lsp,
-		java = formatters.lsp,
-		javascript = formatters.lsp,
-		json = formatters.lsp,
-		lua = formatters.lsp,
-		-- markdown = formatters.prettierd,
-		openscad = formatters.lsp,
-		python = formatters.black,
-		rust = formatters.lsp,
-		scad = formatters.lsp,
-		scss = formatters.lsp,
-		sh = formatters.shfmt,
-		terraform = formatters.lsp,
-		typescript = formatters.prettierd,
-		typescriptreact = formatters.prettierd,
-		yaml = formatters.lsp,
-
-		-- Add conditional formatter that only runs if a certain file exists
-		-- in one of the parent directories.
-	},
-
-	-- By default, all shell commands are prefixed with "sh -c" (see PR #3)
-	-- To prevent that set `run_with_sh` to `false`.
-	run_with_sh = false,
 })
