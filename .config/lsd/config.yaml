@@ -1,0 +1,12 @@
+blocks:
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - name
+color:
+  theme: custom
+
+date: "+%Y-%m-%d %H:%M:%S %a"
+

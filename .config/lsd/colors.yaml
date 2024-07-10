@@ -1,0 +1,52 @@
+# Nord theme colors
+# [76, 86, 106] # Nord 3 dark grey
+# [216, 222, 233] # Nord 4 grey
+# [143, 188, 187] # Nord 7
+# [136, 192, 208] # Nord 8
+# [129, 161, 193] # Nord 9
+# [94, 129, 172] # Nord 10
+# [191, 97, 106] # Nord 11 red
+# [208, 135, 112] # Nord 12 orange
+# [235, 203, 139] # Nord 13 yellow
+# [163, 190, 140] # Nord 14 green
+# [180, 142, 173] # Nord 15 purple
+
+user: [143, 188, 187] # Nord 7
+group: [136, 192, 208] # Nord 8
+permission:
+  read: [163, 190, 140] # Nord 14 green
+  write: [235, 203, 139] # Nord 13 yellow
+  exec: [191, 97, 106] # Nord 11 red
+  exec-sticky: [216, 222, 233] # Nord 4 light grey
+  no-access: [216, 222, 233] # Nord 4 light grey
+  octal: [216, 222, 233] # Nord 4 grey
+  acl: [216, 222, 233] # Nord 4 grey
+  context: [216, 222, 233] # Nord 4 grey
+date:
+  hour-old: [143, 188, 187] # Nord 7
+  day-old: [136, 192, 208] # Nord 8
+  older: [129, 161, 193] # Nord 9
+size:
+  none: [180, 142, 173] # Nord 15 purple
+  small: [163, 190, 140] # Nord 14 green
+  medium: [235, 203, 139] # Nord 13 yellow
+  large: [208, 135, 112] # Nord 12 orange
+inode:
+  valid: [163, 190, 140] # Nord 14 green
+  invalid: [191, 97, 106] # Nord 11 red
+links:
+  valid: [163, 190, 140] # Nord 14 green
+  invalid: [191, 97, 106] # Nord 11 red
+tree-edge: [76, 86, 106] # Nord 3 dark grey
+git-status:
+  default: [76, 86, 106] # Nord 3 dark grey
+  unmodified: [216, 222, 233] # Nord 4 light grey
+  ignored: [76, 86, 106] # Nord 3 dark grey
+  new-in-index: [235, 203, 139] # Nord 13 yellow
+  new-in-workdir: [235, 203, 139] # Nord 13 yellow
+  typechange: [180, 142, 173] # Nord 15 purple
+  deleted: [191, 97, 106] # Nord 11 red
+  renamed: [180, 142, 173] # Nord 15 purple
+  modified: [143, 188, 187] # Nord 7
+  conflicted: [208, 135, 112] # Nord 12 orange
+
