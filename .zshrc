@@ -13,5 +13,15 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+alias ls='lsd'
+alias l='ls'
+alias la='ls -la'
+alias lga='lsd -lga'
+alias lt='ls --tree'
+
+source /home/stefan/.config/broot/launcher/bash/br
+
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
 
