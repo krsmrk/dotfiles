@@ -13,11 +13,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-alias ls='lsd'
-alias l='ls'
-alias la='ls -la'
+alias ll='lsd'
+alias la='lsd -la'
 alias lga='lsd -lga'
-alias lt='ls --tree'
+alias lt='lsd --tree'
+alias lta='lsd -a --tree'
 
 source /home/stefan/.config/broot/launcher/bash/br
 
