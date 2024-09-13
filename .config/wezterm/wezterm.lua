@@ -13,9 +13,14 @@ end
 
 config.font =
 	wezterm.font_with_fallback {
-		{ family = 'Iosevka Skiouros', weight = 'Medium', italic = false },
-		'Symbols Nerd Fond Mono',
+		{ family = 'Iosevka Skiouros Nerd Font Mono', weight = 'Medium', italic = false },
+		-- Icons are way too large with this setting:
+		-- { family = 'Iosevka Skiouros', weight = 'Medium', italic = false, },
+		-- { family = 'Symbols Nerd Fond Mono', },
 	}
+
+-- config.use_cap_height_to_scale_fallback_fonts = true
+config.font_size = 14
 
 config.color_scheme = 'nordfox'
 config.hide_tab_bar_if_only_one_tab = true
