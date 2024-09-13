@@ -1,7 +1,10 @@
 local vim = vim
 return {
 	"L3MON4D3/LuaSnip",
-	-- follow latest release.
+	dependencies = {
+		{ "rafamadriz/friendly-snippets" },
+	},
+	-- Follow latest release.
 	version = "v2.*",
 	build = "make install_jsregexp", -- Optional install
 	config = function()
@@ -11,6 +14,9 @@ return {
 			update_events = { "TextChanged", "TextChangedI" },
 			enable_autosnippets = true,
 		})
+
+		-- Load snippets in `runtimepath` (added by friendly-snippets)
+		require('luasnip.loaders.from_vscode').lazy_load()
 
 		vim.keymap.set(
 			{ "i" },

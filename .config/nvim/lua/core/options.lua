@@ -4,11 +4,16 @@ local vim = vim
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.cmdheight = 0
+
 -- Do replace tabs with spaces.
 vim.opt.expandtab = false
 
 -- Display size of <Tab>.
 vim.opt.tabstop = 4
+
+-- Do not wrap long lines.
+vim.opt.wrap = false
 
 -- Number of blanks for indentation commands. Uses tabstop when 0.
 vim.opt.shiftwidth = 4
@@ -35,7 +40,7 @@ vim.opt.signcolumn = "number"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
--- Show whitespaceh in editor
+-- Show whitespace in editor
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
@@ -47,7 +52,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<ESC>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<C-[>', '<cmd>nohlsearch<CR>')
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+-- Case-insensitive searching unless \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -56,7 +61,7 @@ vim.opt.inccommand = 'split'
 
 vim.g.have_nerd_font = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
+-- Enable mouse mode
 vim.opt.mouse = 'a'
 
 -- The current mode is already in the status line
@@ -68,3 +73,8 @@ vim.opt.foldenable = false
 -- Open split windows on other side
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Spell checking
+vim.opt.spell = true
+vim.opt.spelllang = "en_us,de_20"
+vim.spelloptions = "camel"

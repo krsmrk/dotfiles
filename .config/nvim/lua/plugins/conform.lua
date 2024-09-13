@@ -2,12 +2,19 @@ return {
 	"stevearc/conform.nvim",
 	opts = {
 		formatters_by_ft = {
-			lua = { "stylelua" },
+			lua = { "stylua" },
+			sql = { "sqlfluff" },
 			-- python = { "isort", "black" },
-			python = { "ruff_organize_imports", "ruff_fix", "ruff_format"},
+			python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
+		},
+		formatters = {
+			sqlfluff = {
+				args = { "fix", "-" },
+				stdin = true,
+			},
 		},
 		format_on_save = {
-			timeout_ms = 500,
+			timeout_ms = 2500,
 			lsp_format = "fallback",
 		},
 	},
